@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind CSS Dark Mode Example</title>
+    <link href="dist/styles.css" rel="stylesheet" />
+    <style>
+      /* Optional: Custom styles for transition effect */
+      body {
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+    <div class="min-h-screen flex flex-col items-center justify-center p-6">
+      <header class="mb-8 text-center">
+        <h1 class="text-4xl font-extrabold mb-4">
+          Tailwind CSS Dark Mode Example
+        </h1>
+        <p class="text-lg mb-6">
+          Toggle between light and dark modes with the switch below.
+        </p>
+      </header>
+
+      <!-- Card Component -->
+      <div
+        class="card dark:bg-gray-800 dark:text-gray-200 p-6 rounded-lg shadow-lg w-full max-w-md"
+      >
+        <h2 class="text-2xl font-semibold mb-4">Welcome to Dark Mode</h2>
+        <p class="mb-4">
+          This is a simple example demonstrating how to use Tailwind CSS for
+          creating a responsive and stylish dark mode toggle.
+        </p>
+        <p>Enjoy the seamless transition between light and dark themes!</p>
+      </div>
+
+      <!-- Dark Mode Toggle Switch -->
+      <div class="mt-8">
+        <label for="dark-mode-toggle" class="flex items-center cursor-pointer">
+          <span class="mr-2 text-sm">Light</span>
+          <input id="dark-mode-toggle" type="checkbox" class="hidden" />
+          <div class="relative">
+            <div class="w-14 h-8 bg-gray-300 rounded-full shadow-inner"></div>
+            <div
+              class="absolute left-1 top-1 bg-white w-6 h-6 rounded-full shadow transform transition-transform duration-200"
+              id="toggle-circle"
+            ></div>
+          </div>
+          <span class="ml-2 text-sm">Dark</span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Link to the external JavaScript file -->
+    <script src="src/dark-mode-toggle.js"></script>
+  </body>
+</html>
